@@ -1,0 +1,17 @@
+<div *ngFor="let stock of stocks">
+  <h3>
+    <a [title]="stock.symbol">
+      {{ stock.symbol }}
+    </a>
+
+    <p>
+      {{ stock.longName }} <br>
+      {{ stock.regularMarketPrice }}
+    </p>
+
+    <button (click)="share()">
+      Share
+    </button>
+
+  </h3>
+</div>
