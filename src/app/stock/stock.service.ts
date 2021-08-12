@@ -20,10 +20,12 @@ export class StockService {
         map((data: any) =>
           data.map(
             (item: any) =>
-              new Stock(item.symbol, item.longName, item.regularMarketPrice)
+              new Stock(item.symbol, item.longName, item.regularMarketPrice, item.change, item.description)
           )
         )
       );
   }
+
+
 }
 

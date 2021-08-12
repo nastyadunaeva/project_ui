@@ -1,17 +1,15 @@
 <div *ngFor="let stock of stocks">
   <h3>
-    <a [title]="stock.symbol">
+    <a [title]="stock.symbol + ' details'" [routerLink]="['/stocks', stock.symbol]">
       {{ stock.symbol }}
     </a>
-
+    {{ stock.change | number:'1.2-2' }}% <br>
     <p>
+
       {{ stock.longName }} <br>
-      {{ stock.regularMarketPrice }}
+      {{ stock.regularMarketPrice | currency }}
     </p>
 
-    <button (click)="share()">
-      Share
-    </button>
 
   </h3>
 </div>

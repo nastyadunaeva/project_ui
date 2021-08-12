@@ -2,24 +2,25 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 //import { RouterModule } from '@angular/router';
-//import { ReactiveFormsModule } from '@angular/forms';
 
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { PersonListComponent } from './person-list/person-list.component';
 import { StockListComponent } from './stock-list/stock-list.component';
-//import { ProductListComponent } from './product-list/product-list.component';
-//import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
-//import { ProductDetailsComponent } from './product-details/product-details.component';
+import { StockDetailsComponent } from './stock-details/stock-details.component'
 
 import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
+import {BookmarksService} from "./bookmarks.service";
+import {BookmarksComponent} from "./bookmarks/bookmarks.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
     PersonListComponent,
-    StockListComponent
+    StockListComponent,
+    StockDetailsComponent,
+    BookmarksComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +29,11 @@ import {RouterModule} from "@angular/router";
     RouterModule.forRoot([
       //{ path: '', component: PersonListComponent },
       { path: '', component: StockListComponent },
+      { path: 'stocks/:symbol', component: StockDetailsComponent },
+      { path: 'bookmarks', component: BookmarksComponent},
     ])
   ],
-  providers: [],
+  providers: [BookmarksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

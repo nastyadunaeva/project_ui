@@ -1,0 +1,13 @@
+<h3>Bookmarks</h3>
+
+<div class="bookmarks-item" *ngFor="let item of items">
+  <a [title]="item.symbol + ' details'" [routerLink]="['/stocks', item.symbol]">
+    {{ item.symbol }}
+  </a>
+  <p>
+    <span>{{ item.regularMarketPrice | currency }}</span>
+  </p>
+
+
+  <button (click)="deleteFromBookmarks(item)">Delete</button>
+</div>

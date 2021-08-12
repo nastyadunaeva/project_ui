@@ -20,7 +20,4 @@ export class StockListComponent {
     });
   }
 
-  share() {
-    window.alert('The product has been shared!');
-  }
 }
