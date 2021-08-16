@@ -4,10 +4,14 @@
   <a [title]="item.symbol + ' details'" [routerLink]="['/stocks', item.symbol]">
     {{ item.symbol }}
   </a>
+  <button (click)="deleteFromBookmarks(item)" class="delete-button">
+    <i class="material-icons">clear</i>
+
+  </button>
   <p>
     <span>{{ item.regularMarketPrice | currency }}</span>
   </p>
 
 
-  <button (click)="deleteFromBookmarks(item)">Delete</button>
+
 </div>

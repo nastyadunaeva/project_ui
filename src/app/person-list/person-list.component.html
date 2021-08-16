@@ -1,12 +1,14 @@
 <div *ngFor="let person of persons">
   <h3>
-    <a [title]="person.username">
+    <a [title]="person.username" >
       {{ person.username }}
     </a>
 
-    <p *ngIf="person.firstName">
-      Description: {{ person.firstName + person.lastName + person.role }}
+    <p>
+      {{ person.firstName + " " + person.lastName }}
     </p>
+
+    <p>{{person.role}}</p>
 
   </h3>
 </div>

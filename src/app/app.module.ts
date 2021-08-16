@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
 import {BookmarksService} from "./bookmarks.service";
 import {BookmarksComponent} from "./bookmarks/bookmarks.component";
+//import {MatIconModule} from  '@angular/material/icon';
+//import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,8 +28,10 @@ import {BookmarksComponent} from "./bookmarks/bookmarks.component";
     BrowserModule,
     RouterModule,
     HttpClientModule,
+    //MatButtonModule,
+    //MatIconModule,
     RouterModule.forRoot([
-      //{ path: '', component: PersonListComponent },
+      { path: 'users', component: PersonListComponent },
       { path: '', component: StockListComponent },
       { path: 'stocks/:symbol', component: StockDetailsComponent },
       { path: 'bookmarks', component: BookmarksComponent},
